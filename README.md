@@ -71,6 +71,8 @@ An interactive Streamlit web app to analyze historical stock performance for mul
 
   * Daily Open, High, Low, Close, Adjusted Close, and Volume data
   * Pre-cleaned data for each selected equity
+The historical stock data was collected using the yfinance library, which fetches data directly from Yahoo Finance.
+
 
 ---
 
