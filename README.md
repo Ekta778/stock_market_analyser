@@ -7,7 +7,7 @@ An interactive Streamlit web app to analyze historical stock performance for mul
 
 ## 🚀 Live Demo
 
-🔗 [View Live App on Netlify](#)*(https://stockmarketsanalyzer.netlify.app/)*
+🔗 [View Live App on Netlify](*(https://stockmarketsanalyzer.netlify.app/))*
 
 ---
 
