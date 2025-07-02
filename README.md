@@ -1,89 +1,94 @@
+# 📈 **Stock Market Analyser**
 
-# 📈 Stock Market Analyser
-
-An interactive Streamlit web app to analyze historical stock performance for multiple companies. The dashboard helps users explore market trends, calculate technical indicators, and visualize patterns across a 5-year timeline.
-
----
-
-## 🚀 Live Demo
-
-🔗  [https://stockmarketsanalyzer.netlify.app](https://stockmarketsanalyzer.netlify.app)
+An interactive frontend-based tool to analyze and visualize 5 years of historical stock performance. Built using **Vite**, **TypeScript**, and **Tailwind CSS**, the project uses manually downloaded data from **Yahoo Finance** stored as CSV files. The app is fully responsive and deployed live using **Netlify**.
 
 ---
 
-## 🧰 Tech Stack
+## 🔗 **Live Demo**
 
-- **Python**
-- **Pandas**
-- **Streamlit**
-- **Matplotlib / Plotly (if used)**
-- **Netlify** (for deployment)
+👉 [https://stockmarketsanalyzer.netlify.app](https://stockmarketsanalyzer.netlify.app)
 
 ---
 
-## 📊 Key Features
+## 🧰 **Tech Stack**
 
-- Analyze historical stock data of **10+ equities**
-- Visualize **Open, High, Low, Close** prices over custom date ranges
-- Calculate and display **Simple Moving Average (SMA)** and **Volatility**
-- Interactive dashboard with filters for:
-  - Stock symbol
-  - Date range
-  - Indicator selection
-- Clean and user-friendly interface using Streamlit
-- Deployed on **Netlify** for global accessibility
+- **Frontend:** Vite, TypeScript, Tailwind CSS, HTML
+- **Data Handling (Optional):** Python, Pandas
+- **Deployment:** Netlify
 
 ---
 
-## 📦 Installation
+## 📊 **Features**
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Ekta778/stock_market_analyser.git
-   cd stock_market_analyser
-````
-
-2. **Create a Virtual Environment (Optional)**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install Dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the App Locally**
-
-   ```bash
-   streamlit run app.py
-   ```
+- Visualizes stock data: **Open, High, Low, Close, Volume, Adjusted Close**
+- Displays charts for **10+ stocks** over a **5-year** period
+- Applies **Simple Moving Averages (SMA)** and basic **Volatility indicators**
+- Clean, responsive UI with filters for **stock symbol** and **date range**
+- Hosted live with **Netlify** for fast access
 
 ---
 
-## 📥 Data Source
+## 📥 **Data Source**
 
-* Historical stock data was obtained from **locally stored CSV files**
-* Files contain:
+- Historical stock data is **manually downloaded from [Yahoo Finance](https://finance.yahoo.com/)**.
+- Stored locally in the `/data/` directory as CSV files.
+- Each file contains:
+  - Daily Open, High, Low, Close, Adjusted Close, and Volume data
 
-  * Daily Open, High, Low, Close, Adjusted Close, and Volume data
-  * Pre-cleaned data for each selected equity
-The historical stock data was collected using the yfinance library, which fetches data directly from Yahoo Finance.
+> ✅ **Optional Python Script to Fetch Automatically**:
+> ```python
+> import yfinance as yf
+> df = yf.download('AAPL', start='2019-01-01', end='2024-12-31')
+> df.to_csv('data/AAPL.csv')
+> ```
+
+---
+
+## 📁 **Project Structure**
+
+├── src/ # Frontend code (Vite + TypeScript)
+
+├── data/ # CSV stock data files
+
+├── app.py (optional) # Python script to preprocess data
+
+├── requirements.txt # Python dependencies
+
+├── package.json # Frontend dependencies
+
+├── tailwind.config.js # Tailwind CSS config
+
+├── vite.config.ts # Vite config
+
+├── index.html # App entry point
+
+└── README.md # Project documentation
+
 
 
 ---
 
+## 💻 **Local Setup Instructions**
 
-## 🙋‍♀️ About the Developer
+### ✅ **Frontend Setup (Vite + Tailwind)**
 
-**Ekta Prakash**
-Final-year B.Tech CSE Student | Python & Backend Enthusiast
-📫 [LinkedIn](#) • [GitHub](https://github.com/Ekta778)
+```bash
+git clone https://github.com/Ekta778/stock_market_analyser.git
+cd stock_market_analyser
 
----
+npm install
+npm run dev
 
+### 🐍 Python Setup (Optional - For local CSV processing)
 
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Python script (if any)
+streamlit run app.py
 
