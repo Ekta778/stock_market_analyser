@@ -35,19 +35,6 @@ An interactive Streamlit web app to analyze historical stock performance for mul
 
 ---
 
-## 📁 Project Structure
-
-```
-
-├── app.py               # Main Streamlit app script
-├── data/                # Contains CSV files for stock data
-├── requirements.txt     # List of Python dependencies
-└── README.md            # Project documentation
-
-````
-
----
-
 ## 📦 Installation
 
 1. **Clone the Repository**
