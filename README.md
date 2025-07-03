@@ -262,15 +262,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Lucide React** for beautiful icons
 - **Vite** for lightning-fast development experience
 
-## 📞 Support
-
-For support, email your-email@example.com or create an issue in the GitHub repository.
-
----
-
-**Built with ❤️ using React, TypeScript, and modern web technologies**
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/stock-market-analysis-tool?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/stock-market-analysis-tool?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/stock-market-analysis-tool)
-![GitHub license](https://img.shields.io/github/license/yourusername/stock-market-analysis-tool)
