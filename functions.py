@@ -1,26 +1,44 @@
+# functions.py
+
+import yfinance as yf
+import matplotlib.pyplot as plt
 import streamlit as st
-import pandas as pd
-from functions import download_data, plot_closing_price, plot_volume, plot_moving_averages
 
-st.set_page_config(page_title="Stock Market Analyzer", layout="wide")
+def download_data(ticker, start_date, end_date):
+    try:
+        data = yf.download(ticker, start=start_date, end=end_date)
+        return data
+    except Exception as e:
+        st.error(f"Error downloading data: {e}")
+        return None
 
-st.title("📊 Stock Market Analyzer")
+def plot_closing_price(data, ticker):
+    fig, ax = plt.subplots()
+    ax.plot(data['Close'], label='Closing Price')
+    ax.set_title(f"{ticker} Closing Price")
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Price")
+    ax.legend()
+    st.pyplot(fig)
 
-ticker = st.text_input("Enter Stock Ticker Symbol", "AAPL")
-start_date = st.date_input("Start Date", pd.to_datetime("2022-01-01"))
-end_date = st.date_input("End Date", pd.to_datetime("2023-01-01"))
+def plot_volume(data, ticker):
+    fig, ax = plt.subplots()
+    ax.bar(data.index, data['Volume'], color='orange')
+    ax.set_title(f"{ticker} Volume")
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Volume")
+    st.pyplot(fig)
 
-if st.button("Analyze"):
-    data = download_data(ticker, start_date, end_date)
+def plot_moving_averages(data, ticker):
+    data['MA20'] = data['Close'].rolling(window=20).mean()
+    data['MA50'] = data['Close'].rolling(window=50).mean()
 
-    if data is not None and not data.empty:
-        st.subheader("📈 Closing Price")
-        plot_closing_price(data, ticker)
-
-        st.subheader("📉 Volume")
-        plot_volume(data, ticker)
-
-        st.subheader("🔁 Moving Averages")
-        plot_moving_averages(data, ticker)
-    else:
-        st.warning("No data available for the selected period.")
+    fig, ax = plt.subplots()
+    ax.plot(data['Close'], label='Closing Price', color='blue')
+    ax.plot(data['MA20'], label='20-Day MA', color='green')
+    ax.plot(data['MA50'], label='50-Day MA', color='red')
+    ax.set_title(f"{ticker} Moving Averages")
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Price")
+    ax.legend()
+    st.pyplot(fig)
