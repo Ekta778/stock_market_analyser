@@ -6,7 +6,7 @@ A modern, responsive web application for comprehensive stock market analysis fea
 
 ## 🚀 Live Demo
 
-[View Live Application](https://your-app-url.netlify.app) *(Replace with your actual deployment URL)*
+[View Live Application](https://your-app-url.netlify.app) *(stockmarketsanalyzer.netlify.app)*
 
 ## ✨ Features
 
