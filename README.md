@@ -251,10 +251,6 @@ The application generates automated investment recommendations based on:
 - Add tests for new features
 - Update documentation
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - **Recharts** for excellent charting capabilities
